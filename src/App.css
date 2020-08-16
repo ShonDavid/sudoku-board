@@ -1,38 +1,127 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.table-container{
+  display: flex;
+  justify-content: center;
+  padding-top: 4vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.buttons-score-container{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 4vw;
+}
+
+.congrats-container{
+  display: flex;
+  justify-content: center;
+  padding-top: 1vw;
+}
+
+.sudoku-table{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table, th, td .sudoku-table{
+  table-layout: fixed;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}
+th:nth-child(1) {
+  border-left: 2px solid black;
+}
+
+tr:nth-child(1) {
+  border-top: 2px solid black;
+}
+
+th:nth-child(3n) {
+  border-right: 2px solid black;
+}
+
+tr:nth-child(3n) {
+  border-bottom: 2px solid black;
+}
+
+.btn-group button {
+  background-color: #ffdb00; /* Green background */
+  border: 1px solid #ffdb00; /* Green border */
+  font-size: 20px;
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  text-shadow: 0px 0px 5px #000000;
+  transition: background-color 0.5s;
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.btn-group button:last-child {
+  background-color: orange; /* Green background */
+  border: 1px solid orange;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.btn-group button:first-child {
+  background-color: green; /* Green background */
+  border: 1px solid green;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: white;
+  /*color: black;*/
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes congrats {
+  0% {
+    opacity: 1;
+    background-color: transparent;
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    color: transparent;
+    background-color: grey;
+  }
+
+  100% {
+    opacity: 0;
+    background-color: transparent;
   }
 }
+
+@media only screen and (max-width: 680px){
+  table, th, td .sudoku-table{
+    table-layout: fixed;
+    font-size: 5vw;
+    width: 10vw;
+    height: 10vw;
+    border: 1px solid black;
+  }
+}
+
+
+
+
